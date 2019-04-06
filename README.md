@@ -1,13 +1,17 @@
-# Команда   __proto__
+# Quizzy
 
-## Репозитории
+Easy and light game about knowledge. If you know the answer, you win.
 
-* [Клиент](https://github.com/frontend-park-mail-ru/2018_2___proto__)
-* [Сервер](https://github.com/go-park-mail-ru/2018_2___proto__)
+## Repos
 
-## Сборка
+* [Frontend](https://github.com/eadium/quizzy-frontend)
+* [Backend](https://github.com/eadium/quizzy-backend)
+
+## Running on your machine
 
 ### Development
+
+Runs webpack --watch and static server.
 
 ```
 npm install
@@ -22,12 +26,11 @@ npm install
 npm start
 ```
 
-## Деплой
+By default the port is 3000.
 
-[Frontend](https://rasseki.pro/)
+## Deploy
 
-## Участники
+[You can try it here](https://rasseki.pro/)
 
-* Беккер Максим &mdash; [armelior](https://github.com/armelior)
-* Андрюхов Артём &mdash; [mouseartiom](https://github.com/mouseartiom)
-* Григорьев Егор &mdash; [0sektor0](https://github.com/0sektor0)
+Auth is disabled because backend server is inactive.
+Although you won't loose anything.

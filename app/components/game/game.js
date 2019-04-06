@@ -75,7 +75,7 @@ export default class GameComponent extends BaseComponent {
 	}
 
 	_goToIndex() {
-		window.open("https://rasseki.pro", "_self");
 		// this._context.navigate("/");
+		window.open("https://rasseki.pro", "_self");
 	}
 }
