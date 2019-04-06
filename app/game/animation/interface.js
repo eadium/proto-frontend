@@ -17,14 +17,14 @@ export default class Interface extends CanvasWrapper {
 				data = {
 					pos_x: 0,
 					pos_y: 0,
-					width: this.canvas.width / 2,
+					width: this.canvas.width / 2 - 45,
 					height: this.canvas.height / 2,
 				};
 				this.clear(data);
 				break;
 			case "right":
 				data = {
-					pos_x: this.canvas.width / 2,
+					pos_x: this.canvas.width / 2 + 45,
 					pos_y: 0,
 					width: this.canvas.width,
 					height: this.canvas.height,
@@ -39,9 +39,9 @@ export default class Interface extends CanvasWrapper {
 
 	setHP(side, hp) {
 		this.clearHPBar(side);
+		if (hp < 0) { hp = 0; }
 		const spriteName = `hp/hp_${hp}_${side}`;
 		// debugger
-
 		const x = (side === "left")
 			? this.x_margin : this.canvas.width - this.x_margin - this.hpBarWidth;
 		const bar = {
@@ -55,12 +55,17 @@ export default class Interface extends CanvasWrapper {
 	}
 
 	drawBackground() {
+		let height = 1536 - document.documentElement.clientHeight;
+		if (height < 0) { height = 0; }
 		this.draw({
 			image_name: "full-bg",
 			pos_x: 0, // coords of the sprite"s top left point
 			pos_y: 0,
-			width: 1920, // size of the image
-			height: 1080,
+			width: document.documentElement.clientWidth, // size of the image
+			height: document.documentElement.clientHeight,
+		}, {
+			src_x: 0,
+			src_y: height,
 		});
 	}
 
@@ -82,5 +87,25 @@ export default class Interface extends CanvasWrapper {
 			width: 450, // size of the image
 			height: 90,
 		});
+	}
+
+	drawNumber(number) {
+		const clearOptions = {
+			pos_x: this.canvas.width / 2 - 45,
+			pos_y: this.y_margin - 34,
+			width: 95,
+			height: 190,
+		};
+		this.clear(clearOptions);
+
+		if (!(number < 0 && number > 9)) {
+			this.draw({
+				image_name: `numbers/${number}`,
+				pos_x: this.canvas.width / 2 - 45,
+				pos_y: this.y_margin - 34,
+				width: 95, // size of the image
+				height: 190,
+			});
+		}
 	}
 }

@@ -1,6 +1,6 @@
-export const regexLogin = /^[a-zA-Z]/;
+export const regexLogin = /^[a-zA-Z0-9]/;
 export const regexEmail = /\S+@\S+.\S+/;
-export const regexPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z#?!@$%^&*-_]{8,20}$/;
+export const regexPass = /^[0-9a-zA-Z#?!@$%^&*-_]{1}$/;
 export const backend = "https://api.rasseki.pro";
 export const loginPopup = "form__field__popup-login";
 export const emailPopup = "form__field__popup-email";

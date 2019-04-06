@@ -48,6 +48,6 @@ export default class ApplicationComponent extends BaseComponent {
 		this.renderChild("leaderboard", LeaderboardComponent, { preloader: true });
 		this.renderChild("profile", ProfileComponent, { preloader: true });
 		this.renderChild("about", AboutComponent, {});
-		this.renderChild("game", GameComponent, { isReady: false });
+		this.renderChild("game", GameComponent, { navigate: this.navigate, isReady: false });
 	}
 }

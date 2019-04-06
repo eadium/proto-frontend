@@ -1,5 +1,5 @@
-import "./question.scss";
-import template from "./question.hbs";
+import "./gameover.scss";
+import template from "./gameover.hbs";
 import BaseComponent from "../baseComponent";
 import AnswerButtonComponent from "./answer_button/button";
 import Bus from "../../modules/bus";
@@ -10,7 +10,7 @@ export default class QuestionComponent extends BaseComponent {
 		this.template = template;
 		this._context = {
 			questionWindow: false,
-			question: "",
+			text: "",
 			answer1: "",
 			answer2: "",
 			answer3: "",

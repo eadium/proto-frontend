@@ -3,9 +3,6 @@ import template from "./game.hbs";
 import BaseComponent from "../baseComponent";
 import ButtonComponent from "../button/button";
 import Manager from "../../game/animation/manager";
-// import GameScene from "../../game/engine/core/gameScene.ts";
-// import GameObject from "../../game/engine/core/gameObject.ts";
-// import HeroBehaviour from "../../game/gameplay/heroBehaviour.ts";
 import LocalGameServer from "../../game/server/server";
 
 /**
@@ -22,9 +19,18 @@ export default class GameComponent extends BaseComponent {
 
 	render(context) {
 		super.render(context);
-		this.renderChild("isReadyButton", ButtonComponent, {
-			text: "Ready",
-			onClick: this._prepareGame.bind(this),
+		this.renderChild("exitButton", ButtonComponent, {
+			text: "В меню",
+			// onClick: this._prepareGame.bind(this),
+			onClick: this._goToIndex,
+		});
+		this.renderChild("wiz-class_button", ButtonComponent, {
+			text: "Маг",
+			onClick: this._onWizClick.bind(this),
+		});
+		this.renderChild("knight-class_button", ButtonComponent, {
+			text: "Рыцарь",
+			onClick: this._onKnightClick.bind(this),
 		});
 	}
 
@@ -41,7 +47,7 @@ export default class GameComponent extends BaseComponent {
 			.addCanvas("game-screen__interface")
 			.addCanvas("game-screen__hero-left")
 			.addCanvas("game-screen__hero-right")
-			.createHero("wiz", "left")
+			.createHero(this.playerClass, "left")
 			.createHero("knight", "right");
 
 		this.manager.getCanvas("background").drawBackground();
@@ -56,5 +62,20 @@ export default class GameComponent extends BaseComponent {
 
 		this._localServer = new LocalGameServer(this, this.manager);
 		this._localServer.StartGame();
+	}
+
+	_onWizClick() {
+		this.playerClass = "wiz";
+		this._prepareGame();
+	}
+
+	_onKnightClick() {
+		this.playerClass = "knight";
+		this._prepareGame();
+	}
+
+	_goToIndex() {
+		// this._context.navigate("/");
+		window.open("https://rasseki.pro", "_self");
 	}
 }
