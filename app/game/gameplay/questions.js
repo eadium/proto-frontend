@@ -7,7 +7,7 @@ export default `{
 			"answers": [
 				"Requiescat in Pace!",
 				"Deus Vult!",
-				"Allahu Akbar!",
+				"Carpe Diem!",
 				"Shalom!"
 			]
 		},
@@ -95,7 +95,7 @@ export default `{
 			"answers": [
 				"Рукоположение",
 				"Рукопожатие",
-				"Рукоблудие",
+				"Рукопоклоение",
 				"Рукоприкладство"
 			]
 		},
@@ -150,7 +150,7 @@ export default `{
 			"answers": [
 				"Уролог",
 				"Уфолог",
-				"Сексопатолог",
+				"Инфолог",
 				"Психиатр"
 			]
 		},

@@ -22,17 +22,12 @@ export default class AboutComponent extends BaseComponent {
 	 */
 	_renderChildren() {
 		this.renderChild("dev-1", LinkComponent, {
-			text: "Armelior (Fullstack developer)",
-			href: "https://github.com/armelior",
+			text: "eadium (Fullstack developer)",
+			href: "https://github.com/eadium",
 		});
 
 		this.renderChild("dev-2", LinkComponent, {
-			text: "mouseartiom (Fullstack developer)",
-			href: "https://github.com/mouseartiom",
-		});
-
-		this.renderChild("dev-3", LinkComponent, {
-			text: "0sektor0 (Fullstack developer)",
+			text: "0sektor0 (Backend developer)",
 			href: "https://github.com/0sektor0",
 		});
 
