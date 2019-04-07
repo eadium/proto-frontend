@@ -1,6 +1,6 @@
 # Quizzy
 
-Easy and light game about knowledge. If you know the answer, you win.
+A light and easy game about knowledge. If you know the answer, you win.
 
 ## Repos
 
@@ -30,7 +30,7 @@ By default the port is 3000.
 
 ## Deploy
 
-[You can try it here](https://rasseki.pro/)
+[Play!](https://rasseki.pro/)
 
-Auth is disabled because backend server is inactive.
+Auth is disabled because the backend server is inactive.
 Although you won't loose anything.
